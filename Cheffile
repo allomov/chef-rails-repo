@@ -2,13 +2,16 @@
 #^syntax detection
 
 site 'http://community.opscode.com/api/v1'
+cookbook 'sudo'
 cookbook 'apt'
+cookbook 'ruby'
 cookbook 'build-essential'
 cookbook 'runit'
 cookbook 'ohai'
 cookbook 'git'
 cookbook 'openssl'
 cookbook 'monit'
+cookbook 'chef-rails'
 # cookbook 'chef-client'
 
 cookbook 'nginx', '>= 1.0.0'

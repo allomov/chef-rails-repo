@@ -1,18 +1,16 @@
 {
   // This is the list of the recipes that are going to be cooked.
   "run_list": [
-    "recipe[sudo]",
-    "recipe[apt]",
+    // "recipe[sudo]",
+    // "recipe[apt]",
     "recipe[build-essential]",
-    "recipe[ohai]",
     "recipe[runit]",
     "recipe[git]",
+    "recipe[rvm]",
 
-    // If you want to use postgres, leave this as it is.
-    // Otherwise, comment the three lines below.
     "recipe[postgresql::server]",
-    "recipe[postgresql::server-dev]",
-    "recipe[postgresql::libpq]",
+    // "recipe[postgresql::server-dev]",
+    // "recipe[postgresql::libpq]",
 
     // If you want to use mysql, comment out the line below.
     // Otherwise, leave it as it is.
@@ -20,8 +18,8 @@
 
     "recipe[nginx::default]",
     "recipe[nginx::apps]",
-    "recipe[ruby]",
-    "recipe[chef-rails]"
+    "recipe[ruby]"
+    // "recipe[chef-rails]"
   ],
 
   // You must define who’s going to be the user(s) you’re going to use for deploy.
@@ -38,6 +36,7 @@
   "postgresql": {
     "users": [
       {
+        "name"  : "ubuntu",
         "username"  : "ubuntu",
         "password"  : "asdf1234",
         "superuser" : true,

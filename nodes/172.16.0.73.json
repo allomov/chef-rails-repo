@@ -5,16 +5,11 @@
     // "recipe[apt]",
     "recipe[build-essential]",
     "recipe[runit]",
+    "recipe[ohai]",
     "recipe[git]",
     "recipe[rvm]",
-
+    "recipe[openssl]",
     "recipe[postgresql::server]",
-    // "recipe[postgresql::server-dev]",
-    // "recipe[postgresql::libpq]",
-
-    // If you want to use mysql, comment out the line below.
-    // Otherwise, leave it as it is.
-    // "recipe[mysql::server]",
 
     "recipe[nginx::default]",
     "recipe[nginx::apps]",
@@ -154,12 +149,15 @@
   },
 
   // The ruby version you’re going to use. Valid values, by now, are 1.8, 1.9 and 1.9.1
-  "languages": {
-    "ruby": {
-      "default_version": "2.1.0"
-    }
-  },
+  // "languages": {
+  //   "ruby": {
+  //     "default_version": "2.1.0"
+  //   }
+  // },
 
+  "rvm": {
+    "default_ruby": "ruby-2.0.0-p353"
+  }, 
   // Finally, declare all the system packages required by the services and gems you’re using in your apps.
   // To give you an example: If you’re using nokogiri, the native extensions compilation will fail unless you have installed the development headers declared below.
   "chef-rails": {
